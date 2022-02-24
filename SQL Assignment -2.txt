@@ -1,0 +1,18 @@
+SQL Assignment no -2
+
+1. query to print first 3 charecters of first name from worker table.
+   
+   SELECT SUBSTRING("FIRSTNAME",1,3) or
+   
+   SELECT LEFT("FIRSTNAME",3)
+
+2. find query to get the position of the alphabet('a') in the firstname column 'Amitabh' from worker table.
+   
+   SELECT CHARINDEX('a','Amitabh',1)
+
+3. find query to print name of employees having highest salary in each department
+   
+   SELECT E.NAME, E.DEPT, E.SALARY
+   FROM EMPLOYEE E
+   WHERE E.SALARY IN 
+   ( SELECT MAX(E.SALARY) FROM EMPLOYEE GROUP BY E.DEPT)
